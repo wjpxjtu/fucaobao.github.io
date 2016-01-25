@@ -5,9 +5,32 @@
     <description>记录fucaobao工作和学习中遇到的技术问题以及一些总结和思考</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 07 Dec 2015 23:17:54 +0800</pubDate>
-    <lastBuildDate>Mon, 07 Dec 2015 23:17:54 +0800</lastBuildDate>
+    <pubDate>Mon, 25 Jan 2016 11:52:51 +0800</pubDate>
+    <lastBuildDate>Mon, 25 Jan 2016 11:52:51 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>在浏览器端调试Node.js</title>
+        <description>&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/Jam3/devtool&quot;&gt;devtool&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/node-inspector/node-inspector&quot;&gt;node-inspector&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Mon, 25 Jan 2016 00:00:00 +0800</pubDate>
+        <link>/2016/01/25/%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AB%AF%E8%B0%83%E8%AF%95Node.js</link>
+        <guid isPermaLink="true">/2016/01/25/%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AB%AF%E8%B0%83%E8%AF%95Node.js</guid>
+        
+        <category>Node.js</category>
+        
+        
+        <category>Node.js</category>
+        
+      </item>
     
       <item>
         <title>First post of pithy</title>
