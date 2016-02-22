@@ -5,9 +5,124 @@
     <description>记录fucaobao工作和学习中遇到的技术问题以及一些总结和思考</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 25 Jan 2016 11:52:51 +0800</pubDate>
-    <lastBuildDate>Mon, 25 Jan 2016 11:52:51 +0800</lastBuildDate>
+    <pubDate>Mon, 22 Feb 2016 17:05:37 +0800</pubDate>
+    <lastBuildDate>Mon, 22 Feb 2016 17:05:37 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Sublime Text 常用插件</title>
+        <description>&lt;p&gt;Sublime Text是前端的一个神器，下面是我工作这么长时间以来总结出的比较好用的插件。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Alignment&lt;/p&gt;
+
+    &lt;p&gt;变量自动对齐&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Bracket Highlighter&lt;/p&gt;
+
+    &lt;p&gt;括号自动匹配&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/images/BracketHighlighter.png&quot; alt=&quot;Bracket Highlighter&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Color Highlighter&lt;/p&gt;
+
+    &lt;p&gt;CSS颜色高亮&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/images/ColorHighlighter.png&quot; alt=&quot;Color Highlighter&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Doc Blockr&lt;/p&gt;
+
+    &lt;p&gt;优美的注释&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Javascript Beautify&lt;/p&gt;
+
+    &lt;p&gt;JS代码格式化，更加优美&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Minifier&lt;/p&gt;
+
+    &lt;p&gt;依赖NodeJS，压缩JS文件&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;NodeJS&lt;/p&gt;
+
+    &lt;p&gt;用于支持gulp、jshint等工具&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SideBar&lt;/p&gt;
+
+    &lt;p&gt;左侧菜单栏增强工具&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SublimeTmpl&lt;/p&gt;
+
+    &lt;p&gt;自动生成HTML、CSS和JS模版代码&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Trailing Space&lt;/p&gt;
+
+    &lt;p&gt;去掉文件中每一行头部以及尾部的空格(包括TAB)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ConvertToUTF8&lt;/p&gt;
+
+    &lt;p&gt;用于支持GBK和GB2312编码&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Emmet&lt;/p&gt;
+
+    &lt;p&gt;前端神奇，自动生成代码，&lt;a href=&quot;http://blog.wpjam.com/m/emmet-grammar/&quot;&gt;使用 Emmet 生成 HTML 的语法详解&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Gulp&lt;/p&gt;
+
+    &lt;p&gt;自动化工具&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;HTML/CSS/JS Prettify&lt;/p&gt;
+
+    &lt;p&gt;HTML/CSS/JS代码优化&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SFTP&lt;/p&gt;
+
+    &lt;p&gt;SFTP/FTP上传工具，无需额外的FTP上传工具&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SublimeCodeIntel&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SublimeCodeGit&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SublimeLinter&lt;/p&gt;
+
+    &lt;p&gt;代码检查&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/images/SublimeLinter.png&quot; alt=&quot;SublimeLinter&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;jshint&lt;/p&gt;
+
+    &lt;p&gt;JS代码检查&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Mon, 22 Feb 2016 00:00:00 +0800</pubDate>
+        <link>/2016/02/22/Sublime-Text-plugins</link>
+        <guid isPermaLink="true">/2016/02/22/Sublime-Text-plugins</guid>
+        
+        <category>Sublime</category>
+        
+        
+        <category>Tools</category>
+        
+      </item>
     
       <item>
         <title>在浏览器端调试Node.js</title>
