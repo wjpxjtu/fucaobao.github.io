@@ -5,8 +5,8 @@
     <description>记录fucaobao工作和学习中遇到的技术问题以及一些总结和思考</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 22 Feb 2016 17:05:37 +0800</pubDate>
-    <lastBuildDate>Mon, 22 Feb 2016 17:05:37 +0800</lastBuildDate>
+    <pubDate>Tue, 23 Feb 2016 10:15:57 +0800</pubDate>
+    <lastBuildDate>Tue, 23 Feb 2016 10:15:57 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -51,7 +51,7 @@
   &lt;li&gt;
     &lt;p&gt;NodeJS&lt;/p&gt;
 
-    &lt;p&gt;用于支持gulp、jshint等工具&lt;/p&gt;
+    &lt;p&gt;用于支持gulp、JSHint等工具&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;SideBar&lt;/p&gt;
@@ -62,6 +62,8 @@
     &lt;p&gt;SublimeTmpl&lt;/p&gt;
 
     &lt;p&gt;自动生成HTML、CSS和JS模版代码&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/images/SublimeTmpl.png&quot; alt=&quot;SublimeTmpl&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Trailing Space&lt;/p&gt;
@@ -107,9 +109,11 @@
     &lt;p&gt;&lt;img src=&quot;/assets/images/SublimeLinter.png&quot; alt=&quot;SublimeLinter&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;jshint&lt;/p&gt;
+    &lt;p&gt;JSHint&lt;/p&gt;
 
     &lt;p&gt;JS代码检查&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/images/JSHint.png&quot; alt=&quot;SublimeLinter&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 </description>
