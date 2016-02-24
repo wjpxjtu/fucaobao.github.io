@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh_cn">
   <head>
-    <title>在浏览器端调试Node.js</title>
+    <title>微博内容抓取，并发送提醒邮件</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta name="keywords" content="在浏览器端调试Node.js,Node.js, Node.js,,JavaScript NodeJS" />
-    <meta name="description" content="在浏览器端调试Node.js, Node.js, Node.js,   devtool" />
+    <meta name="keywords" content="微博内容抓取，并发送提醒邮件,Node.js, Node.js,,JavaScript NodeJS" />
+    <meta name="description" content="微博内容抓取，并发送提醒邮件, Node.js, Node.js, 最近学习爬虫，做了一个小demo，源码somebody-weibo，用来爬取某人微博的最新内容，并对比变化，发送新增的微博到指定邮箱中~~" />
 
     <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
 
@@ -58,14 +58,14 @@
         <div id="post-content" class="panel panel-pithy post">
             <div class="panel-heading">
                 <h3 class="title">
-                  <i class="fa fa-bookmark-o"></i>在浏览器端调试Node.js
+                  <i class="fa fa-bookmark-o"></i>微博内容抓取，并发送提醒邮件
                 </h3>
                 <ul class="info">
                     <li>
                       作者 <span class="author">fucaobao</span>
                     </li>
                     <li>
-                      最后编辑 2016年01月25日
+                      最后编辑 2016年02月24日
                     </li>
                     <li>
                       标签
@@ -76,14 +76,81 @@
                 </ul>
             </div>
             <div class="panel-body content">
-                <ol>
+                <p>最近学习爬虫，做了一个小demo，源码<a href="https://github.com/fucaobao/somebody-weibo.git">somebody-weibo</a>，用来爬取某人微博的最新内容，并对比变化，发送新增的微博到指定邮箱中~~</p>
+
+<h3 id="section">一、爬虫登录微博</h3>
+
+<p>由于微博登录时需要输入验证码，因此常规的输入帐号密码的方式不可行</p>
+
+<p>(对于某些大牛来说，还是可以识别的)。此时，我采用如下方式：</p>
+
+<ol>
   <li>
-    <p><a href="https://github.com/Jam3/devtool">devtool</a></p>
+    <p>手动在浏览器登录微博</p>
   </li>
   <li>
-    <p><a href="https://github.com/node-inspector/node-inspector">node-inspector</a></p>
+    <p>用Fillder取到登录时的cookie</p>
   </li>
 </ol>
+
+<p><img src="/assets/images/WeiboCookie.png" alt="WeiboCookie" /></p>
+
+<ol>
+  <li>在NodeJS中使用该Cookie</li>
+</ol>
+
+<p>登录成功后，weiboName可以获取到，否则weiboName为空。</p>
+
+<p><img src="/assets/images/WeiboName.png" alt="WeiboName" /></p>
+
+<h3 id="section-1">二、抓取页面内容</h3>
+
+<p>由于微博的内容大部分都是通过JS生成的，没有现成的HTML内容，因此需要</p>
+
+<p>变通。经过观察，somebody的首页中的内容，都在这个地方</p>
+
+<p><img src="/assets/images/WeiboHomeFeed.png" alt="WeiboHomeFeed" /></p>
+
+<p>即pl.content.homeFeed.index所在的那个JS中，经过解析即可获取最新</p>
+
+<p>内容，结果如下：</p>
+
+<p><img src="/assets/images/WeiboMainData.png" alt="WeiboMainData" /></p>
+
+<p>其中的html就是我们所需要的内容。</p>
+
+<p>然后解析该html，就可以获取到最新的微博。</p>
+
+<h3 id="section-2">三、发送提醒邮件</h3>
+
+<ol>
+  <li>
+    <p>这里采用的gmail，同时需要将<a href="https://www.google.com/settings/security/lesssecureapps">https://www.google.com/settings/security/lesssecureapps</a>设置为”<b>启用</b>“。</p>
+  </li>
+  <li>
+    <p>收件人可以是多个，收件人用逗号隔开。</p>
+  </li>
+</ol>
+
+<p><img src="/assets/images/WeiboMailOptions.png" alt="WeiboMailOptions" /></p>
+
+<p>最终的效果：</p>
+
+<ul>
+  <li>第一次发送的时候，会发出该页面的所有微博，如下所示：</li>
+</ul>
+
+<p><img src="/assets/images/WeiboResults.png" alt="WeiboResults" /></p>
+
+<ul>
+  <li>从第二次开始，只发送新增的微博内容，如下所示：</li>
+</ul>
+
+<p><img src="/assets/images/WeiboResults1.png" alt="WeiboResults1" /></p>
+
+<ul>
+  <li>以后微博如没有变化，则不再发送，直到somebody发送的新的微博为止。</li>
+</ul>
 
 
             </div>
@@ -97,8 +164,8 @@
 <div id="post-comment" class="panel panel-default">
     <div class="panel-body">
         
-        <div class="ds-thread" data-thread-key="/2016/01/25/在浏览器端调试Node.js"
-             data-title="在浏览器端调试Node.js" data-url="/2016/01/25/%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AB%AF%E8%B0%83%E8%AF%95Node.js"></div>
+        <div class="ds-thread" data-thread-key="/2016/02/24/capture weibo and email to somebody"
+             data-title="微博内容抓取，并发送提醒邮件" data-url="/2016/02/24/capture-weibo-and-email-to-somebody"></div>
         
 
         
@@ -125,7 +192,7 @@
           
           <li>
               <a class="catelink" href="/categories/Node.js">
-                  Node.js&nbsp;<span class="count">[1]</span>
+                  Node.js&nbsp;<span class="count">[2]</span>
               </a>
           </li>
 
