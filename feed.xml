@@ -5,8 +5,8 @@
     <description>记录fucaobao工作和学习中遇到的技术问题以及一些总结和思考</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 24 Feb 2016 17:45:20 +0800</pubDate>
-    <lastBuildDate>Wed, 24 Feb 2016 17:45:20 +0800</lastBuildDate>
+    <pubDate>Mon, 29 Feb 2016 09:46:10 +0800</pubDate>
+    <lastBuildDate>Mon, 29 Feb 2016 09:46:10 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -34,6 +34,8 @@
 &lt;/ol&gt;
 
 &lt;p&gt;登录成功后，weiboName可以获取到，否则weiboName为空。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;由于cookie存在有效期，如果Cookie失效，需要重新获取cookie&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/WeiboName.png&quot; alt=&quot;WeiboName&quot; /&gt;&lt;/p&gt;
 
