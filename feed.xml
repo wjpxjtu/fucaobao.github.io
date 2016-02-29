@@ -5,13 +5,13 @@
     <description>记录fucaobao工作和学习中遇到的技术问题以及一些总结和思考</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 29 Feb 2016 09:46:10 +0800</pubDate>
-    <lastBuildDate>Mon, 29 Feb 2016 09:46:10 +0800</lastBuildDate>
+    <pubDate>Mon, 29 Feb 2016 14:37:36 +0800</pubDate>
+    <lastBuildDate>Mon, 29 Feb 2016 14:37:36 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
         <title>微博内容抓取，并发送提醒邮件</title>
-        <description>&lt;p&gt;最近学习爬虫，做了一个小demo，源码&lt;a href=&quot;https://github.com/fucaobao/somebody-weibo.git&quot;&gt;somebody-weibo&lt;/a&gt;，用来爬取某人微博的最新内容，并对比变化，发送新增的微博到指定邮箱中~~&lt;/p&gt;
+        <description>&lt;p&gt;最近学习爬虫，做了一个小demo，源码&lt;a href=&quot;https://github.com/fucaobao/new-weibo-crawler.git&quot;&gt;new-weibo-crawler&lt;/a&gt;，用来爬取某人微博的最新内容，并对比变化，发送新增的微博到指定邮箱中~~&lt;/p&gt;
 
 &lt;h3 id=&quot;section&quot;&gt;一、爬虫登录微博&lt;/h3&gt;
 
