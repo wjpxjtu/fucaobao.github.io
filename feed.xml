@@ -5,8 +5,8 @@
     <description>记录fucaobao工作和学习中遇到的技术问题以及一些总结和思考</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 30 May 2016 16:57:26 +0800</pubDate>
-    <lastBuildDate>Mon, 30 May 2016 16:57:26 +0800</lastBuildDate>
+    <pubDate>Wed, 01 Jun 2016 11:55:28 +0800</pubDate>
+    <lastBuildDate>Wed, 01 Jun 2016 11:55:28 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -119,8 +119,8 @@
 
 </description>
         <pubDate>Mon, 30 May 2016 00:00:00 +0800</pubDate>
-        <link>/2016/05/30/IE8-upload-files-questions-under-IE8</link>
-        <guid isPermaLink="true">/2016/05/30/IE8-upload-files-questions-under-IE8</guid>
+        <link>/2016/05/30/IE8-upload-files-questions</link>
+        <guid isPermaLink="true">/2016/05/30/IE8-upload-files-questions</guid>
         
         <category>IE8</category>
         
