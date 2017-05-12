@@ -85,8 +85,8 @@
     line-height: 40px;
 }
 
-h3 {
-    margin-bottom: 4px;
+div>h3 {
+    margin-bottom: 8px;
 }
 
 .btn-basic,.btn-group,.btn-disabled,.btn-ghost,.btn-icon,.btn-loading,.btn-menu,.btn-size {
@@ -136,4 +136,41 @@ h3 {
     vertical-align: middle;
     top: 0;
     text-align: left;
+}
+
+.message-duration,.message-info,.message-loading,.message-other {
+    border: 1px solid #E9E9E9;
+    margin: 20px;
+    padding: 10px;
+}
+
+.notification-basic,.notification-custom-icon,.notification-custom-style,.notification-duration,.notification-placement,.notification-with-btn,.notification-with-icon {
+    border: 1px solid #E9E9E9;
+    margin: 20px;
+    padding: 10px;
+}
+
+.progress-circle-dynamic,.progress-circle-mini,.progress-circle,.progress-dashboard,.progress-format,.progress-line-mini {
+    border: 1px solid #E9E9E9;
+    margin: 20px;
+    padding: 10px;
+}
+
+.popconfirm-placement {
+    border: 1px solid #E9E9E9;
+    margin: 20px;
+    padding: 10px;
+}
+.spin-basic,.spin-inside,.spin-size,.spin-tip {
+    border: 1px solid #E9E9E9;
+    margin: 20px;
+    padding: 10px;
+}
+.spin .example {
+    text-align: center;
+    background: rgba(0,0,0,0.05);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 30px 50px;
+    margin: 20px 0;
 }
