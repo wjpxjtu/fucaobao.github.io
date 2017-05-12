@@ -5,9 +5,27 @@
     <description>记录fucaobao工作和学习中遇到的技术问题以及一些总结和思考</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 01 Jun 2016 11:55:28 +0800</pubDate>
-    <lastBuildDate>Wed, 01 Jun 2016 11:55:28 +0800</lastBuildDate>
+    <pubDate>Fri, 12 May 2017 10:15:14 +0800</pubDate>
+    <lastBuildDate>Fri, 12 May 2017 10:15:14 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>React+Antd</title>
+        <description>&lt;p&gt; &lt;br /&gt;
+    使用React+React-Router，将Antd的例子收集起来，&lt;a href=&quot;/demo/react+antd/index.html&quot;&gt;查看Demo&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 12 May 2017 00:00:00 +0800</pubDate>
+        <link>/2017/05/12/React+Antd</link>
+        <guid isPermaLink="true">/2017/05/12/React+Antd</guid>
+        
+        <category>React</category>
+        
+        <category>Antd</category>
+        
+        
+        <category>JavaScript</category>
+        
+      </item>
     
       <item>
         <title>IE8下上传图片问题</title>
