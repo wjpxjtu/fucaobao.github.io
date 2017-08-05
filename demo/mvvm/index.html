@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MVVM</title>
+    <script src="src/Dep.js"></script>
+    <script src="src/Observer.js"></script>
+    <script src="src/Watcher.js"></script>
+    <script src="src/Compiler.js"></script>
+    <script src="src/MVVM.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{b.c.d}}这是普通文本{{message.c}}这是普通文本</p>
+        <p>{{message.c}}</p>
+        <p>{{flag}}</p>
+        <p>
+            <input type="text" v-model="message.c" />
+        </p>
+        <p>
+            <button type="button" v-on:click="clickBtn">click me</button>
+        </p>
+    </div>
+    <script>
+        var vm = new MVVM({
+            el: '#app',
+            data: {
+                b: {
+                    c: {
+                        d: 1
+                    }
+                },
+                message: {
+                    c: 'hello world!'
+                },
+                flag: true
+            },
+            methods: {
+                clickBtn: function() {
+                    this.message.c = Math.random().toFixed(3);
+                    this.b.c.d = Math.random().toFixed(3);
+                    this.flag = !this.flag;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

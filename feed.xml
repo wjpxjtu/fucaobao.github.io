@@ -5,9 +5,25 @@
     <description>记录fucaobao工作和学习中遇到的技术问题以及一些总结和思考</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 12 May 2017 17:36:58 +0800</pubDate>
-    <lastBuildDate>Fri, 12 May 2017 17:36:58 +0800</lastBuildDate>
+    <pubDate>Sat, 05 Aug 2017 22:03:39 +0800</pubDate>
+    <lastBuildDate>Sat, 05 Aug 2017 22:03:39 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>mvvm</title>
+        <description>&lt;p&gt; &lt;br /&gt;
+    仿Vue.js实现一个简易的MVVM框架，支持数据的双向绑定，&lt;a href=&quot;/demo/mvvm/index.html&quot;&gt;查看Demo&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 05 Aug 2017 00:00:00 +0800</pubDate>
+        <link>/2017/08/05/mvvm</link>
+        <guid isPermaLink="true">/2017/08/05/mvvm</guid>
+        
+        <category>MVVM</category>
+        
+        
+        <category>JavaScript</category>
+        
+      </item>
     
       <item>
         <title>React+Antd</title>
