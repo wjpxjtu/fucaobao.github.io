@@ -1,0 +1,64 @@
+.body .content {
+    float: left;
+    width: 330px;
+    margin-right: 70px;
+}
+.body .content .title {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 12px;
+}
+.body .content .title span {
+    display: inline-block;
+    height: 18px;
+    line-height: 18px;
+}
+.body .content .title .first {
+    color: #093281;
+}
+.body .content .title .second {
+    color: #000000;
+}
+.body .content .circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    background: #F8E71C;
+}
+.body .content .contact {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.body .content .contact h3 {
+    height: 18px;
+    margin-bottom: 20px;
+}
+.body .content .contact p {
+    color: #4A4A4A;
+}
+.body .content .contact p label,
+.body .content .contact p span {
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+}
+.body .content .detail p {
+    line-height: 21px;
+    color: #000000;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+.body .loops {
+    float: left;
+    width: 800px;
+}
+.body .loops li {
+    width: 800px;
+    height: 533px;
+    margin-bottom: 30px;
+}
+.body .loops li img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}

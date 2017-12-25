@@ -5,9 +5,25 @@
     <description>记录fucaobao工作和学习中遇到的技术问题以及一些总结和思考</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 13 Sep 2017 15:54:56 +0800</pubDate>
-    <lastBuildDate>Wed, 13 Sep 2017 15:54:56 +0800</lastBuildDate>
+    <pubDate>Mon, 25 Dec 2017 19:44:22 +0800</pubDate>
+    <lastBuildDate>Mon, 25 Dec 2017 19:44:22 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>LOOP-ART</title>
+        <description>&lt;p&gt; &lt;br /&gt;
+    LOOP-ART，&lt;a href=&quot;/demo/loop-art/page/home.html&quot;&gt;查看详情&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 25 Dec 2017 00:00:00 +0800</pubDate>
+        <link>/2017/12/25/design</link>
+        <guid isPermaLink="true">/2017/12/25/design</guid>
+        
+        <category>HTML</category>
+        
+        
+        <category>HTML</category>
+        
+      </item>
     
       <item>
         <title>Canvas</title>

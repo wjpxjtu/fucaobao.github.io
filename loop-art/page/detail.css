@@ -1,0 +1,121 @@
+.body .nav {
+    font-size: 12px;
+    height: 18px;
+    line-height: 18px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-family: "PingFangSC-Regular";
+}
+.body .nav span,
+.body .nav i {
+    float: left;
+    cursor: pointer;
+    color: #4A4A4A;
+}
+.body .nav i {
+    margin-left: 6px;
+    margin-right: 8px;
+}
+.body .content {
+    position: relative;
+}
+.body .content img {
+    display: block;
+    width: 1200px;
+    height: 605px;
+}
+.body .content .slide {
+    width: 300px;
+    height: 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -150px;
+    text-align: center;
+}
+.body .content .slide li {
+    float: left;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    background: #FFF;
+    margin-right: 13px;
+    margin-top: 4px;
+    opacity: 0.2;
+    cursor: pointer;
+    position: relative;
+}
+.body .content .slide li:hover {
+    opacity: 0.6;
+}
+.body .content .slide li.active {
+    opacity: 1;
+}
+.body .content .slide li.active:before {
+    position: absolute;
+    background: url("../images/earth.png") no-repeat;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    left: -4px;
+    top: -4px;
+    content: '';
+}
+.body .content .more {
+    margin-top: 10px;
+    height: 18px;
+    width: 18px;
+    float: right;
+    background: #003382;
+    border-radius: 9px;
+    position: relative;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.body .content .more:before {
+    position: absolute;
+    color: #FFF;
+    height: 18px;
+    width: 18px;
+    text-align: center;
+    left: 0.5px;
+    top: -2px;
+    content: '+';
+}
+.body .content .more:hover:before {
+    content: '-';
+}
+.body .content .detail {
+    margin-top: 30px;
+}
+.body .content .detail .chn,
+.body .content .detail .eng {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.body .content .detail .chn {
+    padding-right: 40px;
+}
+.body .content .detail .eng {
+    padding-left: 40px;
+    padding-right: 50px;
+}
+.body .content .detail .eng li {
+    line-height: 21px;
+}
+.body .content .detail li {
+    font-size: 12px;
+    color: rgba(0,0,0,0.65);
+    line-height: 24px;
+    margin-bottom: 6px;
+    font-family: "PingFangSC-Regular";
+}
+.body .content .detail li span {
+    float: left;
+    width: 90px;
+}
+.body .content .detail li p {
+    overflow: hidden;
+}

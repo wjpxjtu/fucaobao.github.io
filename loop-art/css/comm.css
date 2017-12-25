@@ -1,0 +1,97 @@
+/*common --- BEGIN*/
+html,body {
+    font-size: 14px;
+    font-family: "Microsoft Yahei";
+    width: 100%;
+    height: 100%;
+}
+*{
+    padding:0;
+    margin:0;
+}
+.l {
+    float: left;
+}
+.r {
+    float: right;
+}
+.dn {
+    display: none;
+}
+.db {
+    display: block;
+}
+.dib {
+    display: inline-block;
+}
+.cb {
+    clear: both;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+/*common --- END*/
+/*header --- BEGIN*/
+.header {
+    width: 100%;
+    height: 170px;
+    border-bottom: 1px solid #DFDFDF;
+}
+.header .top {
+    width: 1200px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header .top:before {
+    position: absolute;
+    background: url("../images/logo.png") no-repeat;
+    width: 128px;
+    height: 87px;
+    top: 52px;
+    content: '';
+}
+.header .top .nav {
+    float: right;
+    margin-top: 103px;
+}
+.header .top .nav li {
+    float: left;
+    color: #9B9B9B;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 28px;
+    margin-right: 28px;
+}
+.header .top .nav li:last-child {
+    text-align: right;
+    margin-right: 0;
+}
+.header .top .nav li.active {
+    color: #003382;
+}
+.header .top .nav li:before {
+    content: attr( data-eng );
+}
+.header .top .nav li:hover:before {
+    content: attr( data-chn );
+    text-align: center;
+}
+/*header --- END*/
+/*body --- BEGIN*/
+.body {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+}
+.body:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+/*body --- END*/

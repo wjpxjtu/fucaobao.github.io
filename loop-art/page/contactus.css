@@ -1,0 +1,51 @@
+.body .title {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #4A4A4A;
+    height: 20px;
+    line-height: 20px;
+    font-weight: normal;
+}
+.body .img {
+    display: block;
+    width: 100%;
+    height: 500px;
+    margin-bottom: 20px;
+}
+.body .desc {
+    font-family: "PingFangSC-Medium";
+    line-height: 24px;
+    font-size: 14px;
+    color: #9B9B9B;
+    overflow: auto;
+}
+.body .desc p {
+    margin-bottom: 30px;
+}
+.body .desc .info {
+    float: left;
+    width: 60%;
+}
+.body .desc .info .detail {
+    clear: both;
+    height: 24px;
+}
+.body .desc .info .detail span {
+    float: left;
+    color: #9B9B9B;
+    margin-right: 5px;
+}
+.body .desc .info .detail a {
+    float: left;
+    color: #9B9B9B;
+}
+.body .desc .qrcode {
+    float: left;
+    width: 40%;
+}
+.body .desc .qrcode img {
+    float: right;
+    width: 120px;
+    height: 120px;
+}
