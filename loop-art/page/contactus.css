@@ -1,6 +1,6 @@
 .body .img-wrapper {
     width: 100%;
-    height: 500px;
+    height: 675px;
     margin-bottom: 20px;
 }
 .body .img-wrapper.loading::before {
@@ -10,7 +10,7 @@
     height: 58px;
     left: 50%;
     margin-left: -42px;
-    margin-top: 200px;
+    margin-top: 309px;
     content: '';
 }
 .body .img-wrapper img {
