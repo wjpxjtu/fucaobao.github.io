@@ -12,7 +12,9 @@ $(function () {
         n = getQuery('n'),
         f = '.jpg';
     var path = '../images/projects/' + p + '/' + t + '/' + n + f;
-    $('.content>img').attr('src', path);
+    loadImage(path, function(){
+        $('.content>img').attr('src', path).removeClass('loading');
+    });
 
     $(document).on('click', '.more', function(){
         $('.content .detail').toggleClass('dn');

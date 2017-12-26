@@ -1,5 +1,5 @@
 ;
-(function() {
+(function () {
     window.MAP = {
         'home': '../page/home.html',
         'projects': '../page/projects.html',
@@ -8,7 +8,7 @@
         'news': '../page/news.html',
         'contactus': '../page/contactus.html'
     };
-    $(document).on('click', '.header .nav li', function() {
+    $(document).on('click', '.header .nav li', function () {
         var $this = $(this),
             link = $this.attr('data-eng');
         if ($this.hasClass('active')) {
@@ -18,13 +18,22 @@
         window.location.href = MAP[route];
     });
 
-    function loadscript(url, cb) {
+    window.loadScript = function (url, cb) {
         var script = document.createElement('script');
-        script.onload = function() {
+        script.onload = function () {
             script.onload = null;
             typeof cb === 'function' && cb();
         };
         script.src = url;
         document.getElementsByTagName('head')[0].appendChild(script);
-    }
+    };
+
+    window.loadImage = function (url, cb) {
+        var image = new Image();
+        image.onload = function () {
+            image.onload = null;
+            typeof cb === 'function' && cb(url);
+        };
+        image.src = url;
+    };
 })();
