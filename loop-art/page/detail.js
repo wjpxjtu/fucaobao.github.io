@@ -18,6 +18,7 @@ $(function () {
 
     $(document)
     .on('click', '.more', function(){
+        $(this).toggleClass('active');
         $('.content .detail').toggleClass('dn');
     })
     .on('click', '.second', function(){

@@ -38,7 +38,7 @@
     width: 100%;
     height: 100%;
 }
-.body .img-wrapper.loading img {
+.body .content .img-wrapper.loading img {
     display: none;
 }
 .body .content .slide {
@@ -99,7 +99,7 @@
     top: -2px;
     content: '+';
 }
-.body .content .more:hover:before {
+.body .content .more.active:before {
     content: '-';
 }
 .body .content .detail {
