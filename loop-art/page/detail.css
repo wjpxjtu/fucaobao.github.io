@@ -19,12 +19,11 @@
 .body .content {
     position: relative;
 }
-.body .content img {
-    display: block;
+.body .content .img-wrapper {
     width: 1200px;
     height: 605px;
 }
-.body .content img.loading::before {
+.body .content .img-wrapper.loading::before {
     position: absolute;
     background: url("../images/loading.gif") no-repeat;
     width: 84px;
@@ -33,6 +32,14 @@
     margin-left: -42px;
     margin-top: 278px;
     content: '';
+}
+.body .content .img-wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.body .img-wrapper.loading img {
+    display: none;
 }
 .body .content .slide {
     width: 300px;

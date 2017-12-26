@@ -13,12 +13,14 @@ $(function () {
         f = '.jpg';
     var path = '../images/projects/' + p + '/' + t + '/' + n + f;
     loadImage(path, function(){
-        $('.content>img').attr('src', path).removeClass('loading');
+        $('.content>.img-wrapper').removeClass('loading').find('img').attr('src', path);
     });
 
-    $(document).on('click', '.more', function(){
+    $(document)
+    .on('click', '.more', function(){
         $('.content .detail').toggleClass('dn');
-    }).on('click', '.second', function(){
+    })
+    .on('click', '.second', function(){
         window.location.href = MAP['projects'];
     });
 });

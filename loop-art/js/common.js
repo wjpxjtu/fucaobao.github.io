@@ -11,9 +11,9 @@
     $(document).on('click', '.header .nav li', function () {
         var $this = $(this),
             link = $this.attr('data-eng');
-        if ($this.hasClass('active')) {
-            return;
-        }
+        // if ($this.hasClass('active')) {
+        //     return;
+        // }
         var route = link.replace(/\W+/g, '').toLowerCase();
         window.location.href = MAP[route];
     });
