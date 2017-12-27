@@ -60,6 +60,8 @@
 .body .desc .qrcode {
     float: left;
     width: 40%;
+    position: relative;
+    top: -24px;
 }
 .body .desc .qrcode img {
     float: right;
