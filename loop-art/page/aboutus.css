@@ -1,7 +1,11 @@
 .body .img-wrapper {
     width: 100%;
     height: 500px;
+    margin-top: 20px;
     margin-bottom: 20px;
+}
+.body .img-wrapper.loading {
+    background: #F3F3F3;
 }
 .body .img-wrapper.loading::before {
     position: absolute;
@@ -10,7 +14,7 @@
     height: 58px;
     left: 50%;
     margin-left: -42px;
-    margin-top: 200px;
+    margin-top: 220px;
     content: '';
 }
 .body .img-wrapper img {

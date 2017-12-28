@@ -2,6 +2,10 @@
     width: 100%;
     height: 675px;
     margin-bottom: 20px;
+    margin-top: 20px;
+}
+.body .img-wrapper.loading {
+    background: #F3F3F3;
 }
 .body .img-wrapper.loading::before {
     position: absolute;
