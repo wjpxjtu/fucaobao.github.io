@@ -23,6 +23,9 @@
     width: 1200px;
     height: 605px;
 }
+.body .content .img-wrapper.loading {
+    background: #F3F3F3;
+}
 .body .content .img-wrapper.loading::before {
     position: absolute;
     background: url("../images/loading.gif") no-repeat;
