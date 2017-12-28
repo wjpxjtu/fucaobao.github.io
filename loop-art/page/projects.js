@@ -11,4 +11,10 @@ $(function () {
         window.location.href = '../page/detail.html?p=' + p;
     })
     ;
+
+    function preloadImg(src) {
+        var image = new Image();
+        image.src = src;
+    }
+    preloadImg('../images/loading.gif');
 });
