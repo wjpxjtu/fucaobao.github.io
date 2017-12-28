@@ -23,19 +23,6 @@
     width: 1200px;
     height: 605px;
 }
-.body .content .img-wrapper.loading {
-    background: #F3F3F3;
-}
-.body .content .img-wrapper.loading::before {
-    position: absolute;
-    background: url("../images/loading.gif") no-repeat;
-    width: 84px;
-    height: 58px;
-    left: 50%;
-    margin-left: -42px;
-    margin-top: 278px;
-    content: '';
-}
 .body .content .img-wrapper img {
     display: none;
     width: 100%;
@@ -46,9 +33,6 @@
 }
 .body .content .img-wrapper.loading {
     background: #F3F3F3;
-}
-.body .content .img-wrapper.loading img {
-    display: none;
 }
 .body .content .img-wrapper.loading::before {
     position: absolute;
