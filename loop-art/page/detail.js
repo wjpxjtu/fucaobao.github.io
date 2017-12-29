@@ -42,7 +42,7 @@ $(function () {
         images.push(parent + 'real/' + j + f);
     }
 
-    var INIT_NUM = 4;//初始加载图片数量
+    var INIT_NUM = 5;//初始加载图片数量
     var preLoadImages = images.slice(0, INIT_NUM),
         afterLoadImages = images.slice(INIT_NUM);
     loadImages(preLoadImages, function(list){
