@@ -12,9 +12,14 @@ $(function () {
     })
     ;
 
-    function preloadImg(src) {
-        var image = new Image();
-        image.src = src;
+    function preloadImg(list) {
+        if (typeof list === 'string') {
+            list = [list];
+        }
+        for (var i = 0; i < list.length; i++) {
+            var image = new Image();
+            image.src = list[i];
+        }
     }
-    preloadImg('../images/loading.gif');
+    preloadImg(['../images/loading.gif', '../images/earth.png']);
 });
