@@ -90,7 +90,7 @@ $(function () {
     $(document)
     .on('click', '.more', function () {
         $(this).toggleClass('active');
-        $('.content .detail').toggleClass('dn');
+        $('.content .detail').fadeToggle(1000);
     })
     .on('click', '.second', function () {
         window.location.href = MAP['projects'];
