@@ -64,7 +64,7 @@ $(function () {
                 afterDots = [],
                 length = images.length;
             for (var i = 0; i < arr.length; i++) {
-                afterImgs.push('<img src="' + arr[i] + '")/>');
+                afterImgs.push('<img src="' + arr[i] + '"/>');
                 afterDots.push('<li></li>');
             }
             $('.content .img-wrapper').append(afterImgs.join(''));
