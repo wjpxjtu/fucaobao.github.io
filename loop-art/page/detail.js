@@ -35,13 +35,16 @@ $(function () {
         f = '.jpg';
     var parent = '../images/projects/' + p + '/';
     var images = [];
-    for (var i = 1; i <= projectMap[p].design; i++) {
-        images.push(parent + 'design/' + i + f);
+    if (projectMap[p] && projectMap[p].design) {
+        for (var i = 1; i <= projectMap[p].design; i++) {
+            images.push(parent + 'design/' + i + f);
+        }
     }
-    for (var j = 1; j <= projectMap[p].real; j++) {
-        images.push(parent + 'real/' + j + f);
+    if (projectMap[p] && projectMap[p].real) {
+        for (var j = 1; j <= projectMap[p].real; j++) {
+            images.push(parent + 'real/' + j + f);
+        }
     }
-
     var INIT_NUM = 5;//初始加载图片数量
     var preLoadImages = images.slice(0, INIT_NUM),
         afterLoadImages = images.slice(INIT_NUM);
