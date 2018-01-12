@@ -21,7 +21,7 @@
 }
 .body .content .img-wrapper {
     width: 1200px;
-    height: 605px;
+    height: 675px;
 }
 .body .content .img-wrapper img {
     display: none;
@@ -41,7 +41,7 @@
     height: 58px;
     left: 50%;
     margin-left: -42px;
-    margin-top: 309px;
+    margin-top: 344px;
     content: '';
 }
 .body .content .slide {
