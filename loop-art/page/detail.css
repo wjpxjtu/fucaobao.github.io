@@ -114,6 +114,10 @@
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
 }
+.body .content .detail .chn .title,
+.body .content .detail .eng .title {
+    height: 48px;
+}
 .body .content .detail .chn {
     padding-right: 40px;
 }
