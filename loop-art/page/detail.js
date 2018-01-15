@@ -22,6 +22,22 @@ $(function () {
         bchx: {
             design: 10,
             real: 8
+        },
+        bletgy: {
+            design: 8,
+            real: 0
+        },
+        gssq: {
+            design: 10,
+            real: 8
+        },
+        yxxc: {
+            design: 10,
+            real: 8
+        },
+        sygjsd: {
+            design: 10,
+            real: 8
         }
     };
     //获取URL中的值
