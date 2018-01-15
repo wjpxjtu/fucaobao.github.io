@@ -28,16 +28,16 @@ $(function () {
             real: 0
         },
         gssq: {
-            design: 10,
-            real: 8
+            design: 9,
+            real: 0
         },
         yxxc: {
             design: 10,
-            real: 8
+            real: 0
         },
         sygjsd: {
             design: 10,
-            real: 8
+            real: 0
         }
     };
     //获取URL中的值
