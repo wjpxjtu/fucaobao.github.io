@@ -1,6 +1,6 @@
 .body .nav {
     float: left;
-    margin-top: 40px;
+    margin-top: 20px;
     width: 200px;
 }
 .body .nav li {
@@ -18,15 +18,14 @@
     width: 1000px;
 }
 .body .content .list li {
-    height: 361px;
+    height: 341px;
     border-bottom: 1px solid #DFDFDF;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    padding-top: 30px;
+    padding-top: 20px;
 }
 .body .content .list li:first-child {
-    height: 371px;
-    padding-top: 40px;
+    padding-top: 20px;
 }
 .body .content .list li:last-child {
     border-bottom: none;

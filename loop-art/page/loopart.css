@@ -1,7 +1,7 @@
 .body .left {
     float: left;
     width: 200px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 .body .left ul {
     position: relative;
@@ -39,7 +39,7 @@
 .body .right {
     float: left;
     width: 1000px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 .body .right ul.top {
     padding-bottom: 10px;
