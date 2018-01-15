@@ -7,6 +7,13 @@
         '3': '三亚国家水稻公园海鲜广场屋顶花园，优雅起伏的“麦浪”屋顶，海鲜雅座与广阔的稻田之间用独特的旋转构筑连接，增强步入稻田的体验感，<br>也提供了更浪漫的悬空VIP景观雅座，夜晚浪漫迷醉的田野景致，令人难忘的稻田海鲜大餐体验。',
         '4': '深圳白鹭儿童公园，旨在唤起城市对红树林与大白鹭的记忆，同时为整个前海湾区域创建识别性、互动性及原创性的白鹭互动艺术装置，<br>打造一个自然生动环保的口袋儿童公园。'
     };
+    var ID_MAP = {
+        '0': 'gssq',
+        '1': 'yxxc',
+        '2': 'bchx',
+        '3': 'sygjsd',
+        '4': 'bletgy'
+    };
     window.onload = function () {
         $('#slideshow').cycle({
             fx: 'fade',
@@ -16,6 +23,7 @@
                 var index = $(next).index();
                 $('.footer .page li').eq(index).addClass('active').siblings('li').removeClass('active');
                 $('.footer .desc').html(TEXT_MAP[index]);
+                $('.footer .more').attr('data-id', ID_MAP[index]);
             }
         });
     };
@@ -24,6 +32,7 @@
             index = $this.index();
         $this.addClass('active').siblings('li').removeClass('active');
         $('.footer .desc').html(TEXT_MAP[index]);
+        $('.footer .more').attr('data-id', ID_MAP[index]);
         $('#slideshow img').eq(index).css({
             opacity: 1,
             display: 'block'
@@ -31,5 +40,10 @@
             opacity: 0,
             display: 'none'
         });
+    }).on('click', '.more', function(){
+        var id = $(this).attr('data-id');
+        if(id){
+            window.location.href = '../page/detail.html?p=' + id;
+        }
     });
 }());
