@@ -21,7 +21,7 @@ $(function () {
     var projectMap = {
         bchx: {
             design: 10,
-            real: 9
+            real: 8
         }
     };
     //获取URL中的值
