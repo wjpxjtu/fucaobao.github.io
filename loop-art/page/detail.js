@@ -109,6 +109,8 @@ $(function () {
         $selector.find('.chn .desc p').html(projectDescMap[p].chn.desc);
         $selector.find('.eng .title p').html(projectDescMap[p].eng.title);
         $selector.find('.eng .desc p').html(projectDescMap[p].eng.desc);
+        $('.body .nav .second').text('景观设计');
+        $('.body .nav .third').text(projectDescMap[p].chn.title);
     }
     if (projectMap[p] && projectMap[p].design) {
         for (var i = 1; i <= projectMap[p].design; i++) {
@@ -170,7 +172,7 @@ $(function () {
         $(this).toggleClass('active');
         $('.content .detail').fadeToggle(1000);
     })
-    .on('click', '.second', function () {
+    .on('click', '.first,.second', function () {
         window.location.href = MAP['projects'];
     })
     .on('click', '.content .slide li', function () {
