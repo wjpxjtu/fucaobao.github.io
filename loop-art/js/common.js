@@ -8,7 +8,11 @@
         'news': '../page/news.html',
         'contactus': '../page/contactus.html'
     };
-    $(document).on('click', '.header .nav li', function () {
+    $(document)
+    .on('click', '.header .top>i.logo', function () {
+        window.location.href = MAP['home'];
+    })
+    .on('click', '.header .nav li', function () {
         var $this = $(this),
             link = $this.attr('data-eng');
         // if ($this.hasClass('active')) {

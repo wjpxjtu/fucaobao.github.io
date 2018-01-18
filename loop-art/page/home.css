@@ -19,7 +19,13 @@
     background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
 }
 .header .top:before {
+    cursor: pointer;
+    position: absolute;
+    width: 128px;
+    height: 87px;
+    top: 52px;
     background: url("../images/logo-white.png") no-repeat;
+    content: '';
 }
 .header .top .nav li {
     color: #FFF;
