@@ -101,3 +101,46 @@
     font-size: 12px;
     text-align: center;
 }
+.body .detail {
+    margin-top: 30px;
+}
+.body .detail .chn,
+.body .detail .eng {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.body .detail .chn .name,
+.body .detail .eng .name {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #003382;
+    height: 16px;
+    line-height: 16px;
+    font-weight: bold;
+}
+.body .detail .chn {
+    padding-right: 40px;
+}
+.body .detail .eng {
+    padding-left: 40px;
+    padding-right: 50px;
+}
+.body .detail .eng li {
+    line-height: 21px;
+}
+.body .detail li {
+    font-size: 12px;
+    color: rgba(0,0,0,0.65);
+    line-height: 24px;
+    margin-bottom: 6px;
+    font-family: "PingFangSC-Regular";
+}
+.body .detail li span {
+    float: left;
+    width: 90px;
+}
+.body .detail li p {
+    overflow: hidden;
+}

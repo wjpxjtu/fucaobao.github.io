@@ -38,6 +38,10 @@ $(function () {
         sygjsd: {
             design: 10,
             real: 0
+        },
+        mlxc: {
+            design: 6,
+            real: 0
         }
     };
     var projectDescMap = {
@@ -89,6 +93,16 @@ $(function () {
             eng :{
                 title:'Hainan Sanya rice national park landscape design',
                 desc: 'The project is located on the national coast of Haitang bay, as a demonstration project of the integration of agriculture and tourism, the project has been extent the range of sanya tourism market with rice and south breeding center.The first challenge for designers is to explore the tourism and landscape value of rice, integrate design into nature, and use natural landscape elements such as rice to create a new agricultural tourism experience that conforms to the local culture of Sanya.'
+            }
+        },
+        mlxc: {
+            chn :{
+                title:'湖南“美丽乡村”景观设计',
+                desc: '项目位于湖南省，为响应党的第十六届五中全会提出的建设社会主义新农村的号召，当地着眼于提升乡村生态环境政治，还原乡村之美。设计师对现状场地进行了深入的调研，正对乡土植物，土壤环境，本土文化等做了详细的研究，旨在挖掘并提升乡村的环境与魅力，打造文明生态，环境优美的乡野空间。'
+            },
+            eng :{
+                title:'Hunan "Beautiful Country" landscape design',
+                desc: 'The project is located on Hunan Province.Designer went to the countries and do the research of local planting、soil and local culture.Aim of improve the environment of the country.Rebuild the beautiful country space.'
             }
         }
     };
