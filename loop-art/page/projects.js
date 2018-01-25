@@ -8,7 +8,9 @@ $(function () {
     .on('click', '.demos li', function () {
         var $this = $(this);
         var p = $this.attr('data-p');
-        window.location.href = '../page/detail.html?p=' + p;
+        if(p){
+            window.location.href = '../page/detail.html?p=' + p;
+        }
     })
     ;
 
