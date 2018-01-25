@@ -37,7 +37,7 @@ a {
 /*header --- BEGIN*/
 .header {
     width: 100%;
-    height: 170px;
+    height: 150px;
     border-bottom: 1px solid #DFDFDF;
 }
 .header .top {
@@ -51,12 +51,12 @@ a {
     background: url("../images/logo.png") no-repeat;
     width: 128px;
     height: 87px;
-    top: 52px;
+    top: 32px;
     cursor: pointer;
 }
 .header .top .nav {
     float: right;
-    margin-top: 103px;
+    margin-top: 78px;
 }
 .header .top .nav li {
     float: left;

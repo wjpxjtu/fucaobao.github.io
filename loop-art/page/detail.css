@@ -72,7 +72,7 @@
 }
 .body .content .slide li.active:before {
     position: absolute;
-    background: url("../images/earth.png") no-repeat;
+    /* background: url("../images/earth.png") no-repeat; */
     width: 20px;
     height: 20px;
     border-radius: 10px;
