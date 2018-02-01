@@ -50,8 +50,14 @@
     font-size: 14px;
     font-weight: normal;
     color: #4A4A4A;
-    height: 16px;
+    height: 32px;
     line-height: 16px;
+}
+.body .content .list li .detail h3:before {
+    content: attr( data-eng )
+}
+.body .content .list li .detail h3:hover:before {
+    content: attr( data-chn )
 }
 .body .content .list li .detail p {
     margin-top: 20px;
