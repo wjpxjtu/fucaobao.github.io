@@ -23,7 +23,7 @@ $(function() {
     window.imgOnload = function() {
         var el = arguments[0];
         $(el).closest('li.loading').removeClass('loading');
-    }
+    };
     $(document).on('click', '.more', function() {
         var $this = $(this);
         var type = $this.closest('li').attr('data-type');
@@ -33,11 +33,14 @@ $(function() {
         var list = [];
         var $selector = $this.closest('.detail').siblings('.img').find('.more-img');
         if ($selector.is(':hidden')) {
-            for (var i = 0; i < MAP[key]; i++) {
-                var src = '../images/news/' + key + '/' + (i + 1) + '.jpg';
-                list.push('<li class="loading"><img src="' + src + '" onload="imgOnload(this)"/></li>');
+            if (!$selector.find('li').length) {
+                for (var i = 0; i < MAP[key]; i++) {
+                    var src = '../images/news/' + key + '/' + (i + 1) + '.jpg';
+                    list.push('<li class="loading"><img src="' + src + '" onload="imgOnload(this)"/></li>');
+                }
+                $selector.html(list.join(''));
             }
-            $selector.html(list.join('')).fadeIn();
+            $selector.fadeIn();
         } else {
             $selector.fadeOut();
         }
