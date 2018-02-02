@@ -7,6 +7,8 @@ $(function() {
         syhtw: 8
     };
 
+    var loading = '../images/loading.gif';
+
     function loadImage(src) {
         var img = new Image();
         img.src = src;
@@ -18,11 +20,26 @@ $(function() {
         }
     }
 
+    window.imgOnload = function() {
+        var el = arguments[0];
+        $(el).closest('li.loading').removeClass('loading');
+    }
     $(document).on('click', '.more', function() {
         var $this = $(this);
         var type = $this.closest('li').attr('data-type');
         if (!MAP.hasOwnProperty(type)) {
             return;
+        }
+        var list = [];
+        var $selector = $this.closest('.detail').siblings('.img').find('.more-img');
+        if ($selector.is(':hidden')) {
+            for (var i = 0; i < MAP[key]; i++) {
+                var src = '../images/news/' + key + '/' + (i + 1) + '.jpg';
+                list.push('<li class="loading"><img src="' + src + '" onload="imgOnload(this)"/></li>');
+            }
+            $selector.html(list.join('')).fadeIn();
+        } else {
+            $selector.fadeOut();
         }
     });
 });
