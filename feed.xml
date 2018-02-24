@@ -5,9 +5,25 @@
     <description>记录fucaobao工作和学习中遇到的技术问题以及一些总结和思考</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 25 Dec 2017 19:57:26 +0800</pubDate>
-    <lastBuildDate>Mon, 25 Dec 2017 19:57:26 +0800</lastBuildDate>
+    <pubDate>Sat, 24 Feb 2018 18:54:38 +0800</pubDate>
+    <lastBuildDate>Sat, 24 Feb 2018 18:54:38 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>zk-app</title>
+        <description>&lt;p&gt; &lt;br /&gt;
+    zkapp(未完成)，&lt;a href=&quot;/demo/zk/index.html&quot;&gt;查看详情&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 24 Feb 2018 00:00:00 +0800</pubDate>
+        <link>/2018/02/24/vue</link>
+        <guid isPermaLink="true">/2018/02/24/vue</guid>
+        
+        <category>vue</category>
+        
+        
+        <category>vue</category>
+        
+      </item>
     
       <item>
         <title>LOOP-ART</title>
