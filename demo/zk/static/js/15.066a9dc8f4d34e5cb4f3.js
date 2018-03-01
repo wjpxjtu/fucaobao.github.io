@@ -1,0 +1,2 @@
+webpackJsonp([15],{d83B:function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var a={render:function(){var n=this.$createElement;return(this._self._c||n)("div",[this._v("\n    这里是配送订单\n")])},staticRenderFns:[]};var r=t("VU/8")({data:function(){return{}},components:{}},a,!1,function(n){t("n5ay")},"data-v-63fa7be5",null);e.default=r.exports},n5ay:function(n,e){}});
+//# sourceMappingURL=15.066a9dc8f4d34e5cb4f3.js.map
