@@ -5,14 +5,14 @@
     <description>记录fucaobao工作和学习中遇到的技术问题以及一些总结和思考</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 12 Apr 2018 17:29:45 +0800</pubDate>
-    <lastBuildDate>Thu, 12 Apr 2018 17:29:45 +0800</lastBuildDate>
+    <pubDate>Thu, 12 Apr 2018 17:50:27 +0800</pubDate>
+    <lastBuildDate>Thu, 12 Apr 2018 17:50:27 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
         <title>zk-app</title>
         <description>&lt;p&gt; &lt;br /&gt;
-    食为天消费3.0(未完成)，&lt;a href=&quot;/demo/zk/index.html#/index&quot;&gt;查看详情&lt;/a&gt;&lt;/p&gt;
+    食为天消费3.0(dttx/123456,不断完善中)，&lt;a href=&quot;/demo/zk/index.html#/login&quot;&gt;查看详情&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 24 Feb 2018 00:00:00 +0800</pubDate>
         <link>/2018/02/24/vue</link>
