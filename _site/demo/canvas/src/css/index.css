@@ -1,0 +1,26 @@
+html,body {
+    width: 100%;
+    height: 100%;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+.chart {
+    float: left;
+    width: calc(50% - 40px);
+    margin: 20px;
+}
+.chart .title {
+    height: 45px;
+    line-height: 45px;
+    padding: 0 15px;
+    border-bottom: 1px solid #ECECEC;
+    color: #333;
+    font-size: 14px;
+    font-weight: normal;
+    background: #FAFAFA;
+}
+#chart-bar,#chart-arc {
+    height: 300px;
+}

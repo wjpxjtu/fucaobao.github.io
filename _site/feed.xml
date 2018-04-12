@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>欢迎来到fucaobao的博客</title>
+    <description>记录fucaobao工作和学习中遇到的技术问题以及一些总结和思考</description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 12 Apr 2018 17:50:27 +0800</pubDate>
+    <lastBuildDate>Thu, 12 Apr 2018 17:50:27 +0800</lastBuildDate>
+    <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>zk-app</title>
+        <description>&lt;p&gt; &lt;br /&gt;
+    食为天消费3.0(dttx/123456,不断完善中)，&lt;a href=&quot;/demo/zk/index.html#/login&quot;&gt;查看详情&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 24 Feb 2018 00:00:00 +0800</pubDate>
+        <link>/2018/02/24/vue</link>
+        <guid isPermaLink="true">/2018/02/24/vue</guid>
+        
+        <category>vue</category>
+        
+        
+        <category>vue</category>
+        
+      </item>
+    
+      <item>
+        <title>LOOP-ART</title>
+        <description>&lt;p&gt; &lt;br /&gt;
+    LOOP-ART，&lt;a href=&quot;/loop-art/page/home.html&quot;&gt;查看详情&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 25 Dec 2017 00:00:00 +0800</pubDate>
+        <link>/2017/12/25/design</link>
+        <guid isPermaLink="true">/2017/12/25/design</guid>
+        
+        <category>HTML</category>
+        
+        
+        <category>HTML</category>
+        
+      </item>
+    
+      <item>
+        <title>Canvas</title>
+        <description>&lt;p&gt; &lt;br /&gt;
+    canvas联系，饼状图和柱状图，&lt;a href=&quot;/demo/canvas/index.html&quot;&gt;查看Demo&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 12 Sep 2017 00:00:00 +0800</pubDate>
+        <link>/2017/09/12/Canvas</link>
+        <guid isPermaLink="true">/2017/09/12/Canvas</guid>
+        
+        <category>Canvas</category>
+        
+        
+        <category>JavaScript</category>
+        
+      </item>
+    
+      <item>
+        <title>React+Antd</title>
+        <description>&lt;p&gt; &lt;br /&gt;
+    使用React+React-Router，将Antd的例子收集起来，&lt;a href=&quot;/demo/react+antd/index.html&quot;&gt;查看Demo&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 12 May 2017 00:00:00 +0800</pubDate>
+        <link>/2017/05/12/React+Antd</link>
+        <guid isPermaLink="true">/2017/05/12/React+Antd</guid>
+        
+        <category>React</category>
+        
+        <category>Antd</category>
+        
+        
+        <category>JavaScript</category>
+        
+      </item>
+    
+      <item>
+        <title>IE8下上传图片问题</title>
+        <description>&lt;p&gt; &lt;br /&gt;
+    最近做项目，需要上传图片，用到了jQuery插件&lt;a href=&quot;https://github.com/davgothic/AjaxFileUpload.git&quot;&gt;ajaxFileUpload&lt;/a&gt;，在chrome下表现良好，但是在IE8(低版本IE不考虑)下面出现了问题。&lt;/p&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;一、问题一&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;    //前端代码
+    $.ajaxFileUpload({
+        url: uploadUrl + &#39;/sub_merchant/import_export&#39;,
+        secureuri: false,
+        fileElementId: &#39;multipartFile&#39;,//这里是name，不是id
+        dataType: &#39;json&#39;,
+        success: function(data) {
+        },
+        complete: function(xmlHttpRequest) {
+            $(&quot;#uploadFile&quot;).replaceWith(&#39;&amp;lt;input type=&quot;file&quot; id=&quot;uploadFile&quot; name=&quot;multipartFile&quot; class=&quot;export-btn upload&quot;&amp;gt;&#39;);//解决点击同一个文件，事件不触发的BUG
+            $(&quot;#uploadFile&quot;).on(&quot;change&quot;, function() {
+                ajaxFileUpload();
+            });
+        },
+        error: function(data, status, e) {
+        }
+    });
+
+    //后端代码
+    /**
+	 * 采用spring提供的上传文件的方法
+	 *
+	 * @param request
+	 * @return
+	 * @throws IllegalStateException
+	 * @throws IOException
+	 */
+	@RequestMapping(&quot;/springUpload&quot;)
+	@ResponseBody
+	public OpResponse springUpload(HttpServletRequest request) throws IllegalStateException, IOException {
+		// 将当前上下文初始化给 CommonsMutipartResolver （多部分解析器）
+		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
+		List&amp;lt;Map&amp;lt;String, String&amp;gt;&amp;gt; list = new ArrayList&amp;lt;&amp;gt;();
+		// 检查form中是否有enctype=&quot;multipart/form-data&quot;
+		if (multipartResolver.isMultipart(request)) {
+			//获取list数据的方法
+		}
+		OpResponse jsonMessage = OpResponse.suc();
+		jsonMessage.setData(list);
+		return jsonMessage;
+	}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt; &lt;br /&gt;
+    上述代码，在chrome中能够正常运行，在IE8中发现，前端没有收到返回(无论是success方法还是error方法)，并且提示下载文件(确实是下载，不是上传)。原因是ajaxFileUpload不支持响应头ContentType为application/json设置，不支持原因可能是为了浏览器兼容，因为ie不支持application/json格式，而firefox, chrome浏览器iframe在接收application/json格式的时候会自动将其转化为text/html格式，所以chrome下没有问题，而ie下出现问题。&lt;br /&gt;
+	为了解决这个问题，&lt;strong&gt;&lt;em&gt;在后端手动设置ContentType为text/html&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    HttpServletResponse response = getResponse();
+    response.setContentType(&quot;text/html&quot;); //设置content-type
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;section-1&quot;&gt;二、问题二&lt;/h1&gt;
+
+&lt;p&gt; &lt;br /&gt;
+    在添加上述代码后，发现可以获得返回的JSON数据了，但下载文件的提示依然存在。经过研究，发现&lt;br /&gt;
+    &lt;strong&gt;&lt;em&gt;上传文件的方法不能有返回值(必须为void类型)，返回值通过response.getWriter().write(JsonUtil.toJSONString(list))返回&lt;/em&gt;&lt;/strong&gt;(具体原因暂不清楚)；&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+    //修改后的后端代码
+    /**
+     * 采用spring提供的上传文件的方法
+     *
+     * @param request
+     * @return
+     * @throws IllegalStateException
+     * @throws IOException
+     */
+    @RequestMapping(&quot;/springUpload&quot;)
+    @ResponseBody
+    public void springUpload(HttpServletRequest request) throws IllegalStateException, IOException {
+        // 将当前上下文初始化给 CommonsMutipartResolver （多部分解析器）
+        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
+        HttpServletResponse response = getResponse();
+        response.setContentType(&quot;text/html&quot;); //设置content-type
+        List&amp;lt;Map&amp;lt;String, String&amp;gt;&amp;gt; list = new ArrayList&amp;lt;&amp;gt;();
+        // 检查form中是否有enctype=&quot;multipart/form-data&quot;
+        if (multipartResolver.isMultipart(request)) {
+            //获取list数据的方法
+        }
+        PrintWriter pw  = null;
+        response.setContentType(&quot;text/html&quot;); //设置content-type
+        try {
+            pw = response.getWriter();
+            pw.write(JsonUtil.toJSONString(list));
+        } catch (IOException e) {
+            logger.error(&quot;import_export io exception&quot;,e);
+        }finally{
+            if(pw!=null){
+                pw.close();
+            }
+        }
+    }
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt; &lt;br /&gt;
+    至此，问题全部解决。IE下不再有下载文件的提示，同时返回正确的JSON数据。&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 30 May 2016 00:00:00 +0800</pubDate>
+        <link>/2016/05/30/IE8-upload-files-questions</link>
+        <guid isPermaLink="true">/2016/05/30/IE8-upload-files-questions</guid>
+        
+        <category>IE8</category>
+        
+        
+        <category>JavaScript</category>
+        
+      </item>
+    
+      <item>
+        <title>微博内容抓取，并发送提醒邮件</title>
+        <description>&lt;p&gt;最近学习爬虫，做了一个小demo，源码&lt;a href=&quot;https://github.com/fucaobao/new-weibo-crawler.git&quot;&gt;new-weibo-crawler&lt;/a&gt;，用来爬取某人微博的最新内容，并对比变化，发送新增的微博到指定邮箱中~~&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;一、爬虫登录微博&lt;/h3&gt;
+
+&lt;p&gt;由于微博登录时需要输入验证码，因此常规的输入帐号密码的方式不可行&lt;/p&gt;
+
+&lt;p&gt;(对于某些大牛来说，还是可以识别的)。此时，我采用如下方式：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;手动在浏览器登录微博&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;用Fillder取到登录时的cookie&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/images/WeiboCookie.png&quot; alt=&quot;WeiboCookie&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;在NodeJS中使用该Cookie&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;登录成功后，weiboName可以获取到，否则weiboName为空。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;由于cookie存在有效期，如果Cookie失效，需要重新获取cookie&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/WeiboName.png&quot; alt=&quot;WeiboName&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;二、抓取页面内容&lt;/h3&gt;
+
+&lt;p&gt;由于微博的内容大部分都是通过JS生成的，没有现成的HTML内容，因此需要&lt;/p&gt;
+
+&lt;p&gt;变通。经过观察，somebody的首页中的内容，都在这个地方&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/WeiboHomeFeed.png&quot; alt=&quot;WeiboHomeFeed&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;即pl.content.homeFeed.index所在的那个JS中，经过解析即可获取最新&lt;/p&gt;
+
+&lt;p&gt;内容，结果如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/WeiboMainData.png&quot; alt=&quot;WeiboMainData&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;其中的html就是我们所需要的内容。&lt;/p&gt;
+
+&lt;p&gt;然后解析该html，就可以获取到最新的微博。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;三、发送提醒邮件&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;这里采用的gmail，同时需要将&lt;a href=&quot;https://www.google.com/settings/security/lesssecureapps&quot;&gt;https://www.google.com/settings/security/lesssecureapps&lt;/a&gt;设置为”&lt;b&gt;启用&lt;/b&gt;“。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;收件人可以是多个，收件人用逗号隔开。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/WeiboMailOptions.png&quot; alt=&quot;WeiboMailOptions&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;最终的效果：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;第一次发送的时候，会发出该页面的所有微博，如下所示：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/WeiboResults.png&quot; alt=&quot;WeiboResults&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;从第二次开始，只发送新增的微博内容，如下所示：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/WeiboResults1.png&quot; alt=&quot;WeiboResults1&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;以后微博如没有变化，则不再发送，直到somebody发送的新的微博为止。&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Wed, 24 Feb 2016 00:00:00 +0800</pubDate>
+        <link>/2016/02/24/capture-weibo-and-email-to-somebody</link>
+        <guid isPermaLink="true">/2016/02/24/capture-weibo-and-email-to-somebody</guid>
+        
+        <category>Node.js</category>
+        
+        
+        <category>Node.js</category>
+        
+      </item>
+    
+      <item>
+        <title>Sublime Text 常用插件</title>
+        <description>&lt;p&gt;Sublime Text是前端的一个神器，下面是我工作这么长时间以来总结出的比较好用的插件。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Alignment&lt;/p&gt;
+
+    &lt;p&gt;变量自动对齐&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Bracket Highlighter&lt;/p&gt;
+
+    &lt;p&gt;括号自动匹配&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/images/BracketHighlighter.png&quot; alt=&quot;Bracket Highlighter&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Color Highlighter&lt;/p&gt;
+
+    &lt;p&gt;CSS颜色高亮&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/images/ColorHighlighter.png&quot; alt=&quot;Color Highlighter&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Doc Blockr&lt;/p&gt;
+
+    &lt;p&gt;优美的注释&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Javascript Beautify&lt;/p&gt;
+
+    &lt;p&gt;JS代码格式化，更加优美&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Minifier&lt;/p&gt;
+
+    &lt;p&gt;依赖NodeJS，压缩JS文件&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;NodeJS&lt;/p&gt;
+
+    &lt;p&gt;用于支持gulp、JSHint等工具&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SideBar&lt;/p&gt;
+
+    &lt;p&gt;左侧菜单栏增强工具&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SublimeTmpl&lt;/p&gt;
+
+    &lt;p&gt;自动生成HTML、CSS和JS模版代码&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/images/SublimeTmpl.png&quot; alt=&quot;SublimeTmpl&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Trailing Space&lt;/p&gt;
+
+    &lt;p&gt;去掉文件中每一行头部以及尾部的空格(包括TAB)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ConvertToUTF8&lt;/p&gt;
+
+    &lt;p&gt;用于支持GBK和GB2312编码&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Emmet&lt;/p&gt;
+
+    &lt;p&gt;前端神奇，自动生成代码，&lt;a href=&quot;http://blog.wpjam.com/m/emmet-grammar/&quot;&gt;使用 Emmet 生成 HTML 的语法详解&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Gulp&lt;/p&gt;
+
+    &lt;p&gt;自动化工具&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;HTML/CSS/JS Prettify&lt;/p&gt;
+
+    &lt;p&gt;HTML/CSS/JS代码优化&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SFTP&lt;/p&gt;
+
+    &lt;p&gt;SFTP/FTP上传工具，无需额外的FTP上传工具&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SublimeCodeIntel&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SublimeCodeGit&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SublimeLinter&lt;/p&gt;
+
+    &lt;p&gt;代码检查&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/images/SublimeLinter.png&quot; alt=&quot;SublimeLinter&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;JSHint&lt;/p&gt;
+
+    &lt;p&gt;JS代码检查&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/images/JSHint.png&quot; alt=&quot;SublimeLinter&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Mon, 22 Feb 2016 00:00:00 +0800</pubDate>
+        <link>/2016/02/22/Sublime-Text-plugins</link>
+        <guid isPermaLink="true">/2016/02/22/Sublime-Text-plugins</guid>
+        
+        <category>Sublime</category>
+        
+        
+        <category>Tools</category>
+        
+      </item>
+    
+      <item>
+        <title>在浏览器端调试Node.js</title>
+        <description>&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/Jam3/devtool&quot;&gt;devtool&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/node-inspector/node-inspector&quot;&gt;node-inspector&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Mon, 25 Jan 2016 00:00:00 +0800</pubDate>
+        <link>/2016/01/25/dev-Node.js-in-browser</link>
+        <guid isPermaLink="true">/2016/01/25/dev-Node.js-in-browser</guid>
+        
+        <category>Node.js</category>
+        
+        
+        <category>Node.js</category>
+        
+      </item>
+    
+      <item>
+        <title>First post of pithy</title>
+        <description>&lt;p&gt;123&lt;/p&gt;
+</description>
+        <pubDate>Wed, 25 Nov 2015 00:00:00 +0800</pubDate>
+        <link>/2015/11/25/first-post-of-pithy2</link>
+        <guid isPermaLink="true">/2015/11/25/first-post-of-pithy2</guid>
+        
+        <category>JavaScript</category>
+        
+        
+        <category>JavaScript</category>
+        
+      </item>
+    
+  </channel>
+</rss>

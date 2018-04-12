@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+  <head>
+    <title>IE8下上传图片问题</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="keywords" content="IE8下上传图片问题,JavaScript, IE8,,JavaScript NodeJS" />
+    <meta name="description" content="IE8下上传图片问题, JavaScript, IE8,      最近做项目，需要上传图片，用到了jQuery插件ajaxFileUpload，在chrome下表现良好，但是在IE8(低版本IE不考虑)下面出现了问题。" />
+
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
+
+  <!--Font awesome-->
+  <link href="/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- The pithy main css -->
+  <link rel="stylesheet" href="/assets/stylesheet/pithy.css">
+
+
+  <!--[if lt IE 9]>
+  <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv-printshiv.js"></script>
+  <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+  <![endif]-->
+  <link rel="alternate" type="application/rss+xml" title="欢迎来到fucaobao的博客" href="javascript:void(0);" />
+  <script type="text/javascript" src="/assets/script/analyze.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-pithy" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#pithy-navbar" data-toggle="collapse" type="button">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="/">fucaobao</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="pithy-navbar">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="/">首页</a>
+                </li>
+                <li class="active">
+                    <a href="/about/">关于</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+  <div class="container page-content">
+    <div class="container">
+    <div class="col-md-9 col-content">
+        <div id="post-content" class="panel panel-pithy post">
+            <div class="panel-heading">
+                <h3 class="title">
+                  <i class="fa fa-bookmark-o"></i>IE8下上传图片问题
+                </h3>
+                <ul class="info">
+                    <li>
+                      作者 <span class="author">fucaobao</span>
+                    </li>
+                    <li>
+                      最后编辑 2016年05月30日
+                    </li>
+                    <li>
+                      标签
+                     
+                         <a class="tag" href="/tag/#IE8">IE8</a>
+                     
+                    </li>
+                </ul>
+            </div>
+            <div class="panel-body content">
+                <p> <br />
+    最近做项目，需要上传图片，用到了jQuery插件<a href="https://github.com/davgothic/AjaxFileUpload.git">ajaxFileUpload</a>，在chrome下表现良好，但是在IE8(低版本IE不考虑)下面出现了问题。</p>
+
+<h1 id="section">一、问题一</h1>
+
+<pre><code>    //前端代码
+    $.ajaxFileUpload({
+        url: uploadUrl + '/sub_merchant/import_export',
+        secureuri: false,
+        fileElementId: 'multipartFile',//这里是name，不是id
+        dataType: 'json',
+        success: function(data) {
+        },
+        complete: function(xmlHttpRequest) {
+            $("#uploadFile").replaceWith('&lt;input type="file" id="uploadFile" name="multipartFile" class="export-btn upload"&gt;');//解决点击同一个文件，事件不触发的BUG
+            $("#uploadFile").on("change", function() {
+                ajaxFileUpload();
+            });
+        },
+        error: function(data, status, e) {
+        }
+    });
+
+    //后端代码
+    /**
+	 * 采用spring提供的上传文件的方法
+	 *
+	 * @param request
+	 * @return
+	 * @throws IllegalStateException
+	 * @throws IOException
+	 */
+	@RequestMapping("/springUpload")
+	@ResponseBody
+	public OpResponse springUpload(HttpServletRequest request) throws IllegalStateException, IOException {
+		// 将当前上下文初始化给 CommonsMutipartResolver （多部分解析器）
+		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
+		List&lt;Map&lt;String, String&gt;&gt; list = new ArrayList&lt;&gt;();
+		// 检查form中是否有enctype="multipart/form-data"
+		if (multipartResolver.isMultipart(request)) {
+			//获取list数据的方法
+		}
+		OpResponse jsonMessage = OpResponse.suc();
+		jsonMessage.setData(list);
+		return jsonMessage;
+	}
+</code></pre>
+
+<hr />
+
+<p> <br />
+    上述代码，在chrome中能够正常运行，在IE8中发现，前端没有收到返回(无论是success方法还是error方法)，并且提示下载文件(确实是下载，不是上传)。原因是ajaxFileUpload不支持响应头ContentType为application/json设置，不支持原因可能是为了浏览器兼容，因为ie不支持application/json格式，而firefox, chrome浏览器iframe在接收application/json格式的时候会自动将其转化为text/html格式，所以chrome下没有问题，而ie下出现问题。<br />
+	为了解决这个问题，<strong><em>在后端手动设置ContentType为text/html</em></strong><br />
+ </p>
+
+<pre><code>    HttpServletResponse response = getResponse();
+    response.setContentType("text/html"); //设置content-type
+</code></pre>
+
+<h1 id="section-1">二、问题二</h1>
+
+<p> <br />
+    在添加上述代码后，发现可以获得返回的JSON数据了，但下载文件的提示依然存在。经过研究，发现<br />
+    <strong><em>上传文件的方法不能有返回值(必须为void类型)，返回值通过response.getWriter().write(JsonUtil.toJSONString(list))返回</em></strong>(具体原因暂不清楚)；</p>
+
+<pre><code>
+    //修改后的后端代码
+    /**
+     * 采用spring提供的上传文件的方法
+     *
+     * @param request
+     * @return
+     * @throws IllegalStateException
+     * @throws IOException
+     */
+    @RequestMapping("/springUpload")
+    @ResponseBody
+    public void springUpload(HttpServletRequest request) throws IllegalStateException, IOException {
+        // 将当前上下文初始化给 CommonsMutipartResolver （多部分解析器）
+        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
+        HttpServletResponse response = getResponse();
+        response.setContentType("text/html"); //设置content-type
+        List&lt;Map&lt;String, String&gt;&gt; list = new ArrayList&lt;&gt;();
+        // 检查form中是否有enctype="multipart/form-data"
+        if (multipartResolver.isMultipart(request)) {
+            //获取list数据的方法
+        }
+        PrintWriter pw  = null;
+        response.setContentType("text/html"); //设置content-type
+        try {
+            pw = response.getWriter();
+            pw.write(JsonUtil.toJSONString(list));
+        } catch (IOException e) {
+            logger.error("import_export io exception",e);
+        }finally{
+            if(pw!=null){
+                pw.close();
+            }
+        }
+    }
+}
+
+</code></pre>
+<p> <br />
+    至此，问题全部解决。IE下不再有下载文件的提示，同时返回正确的JSON数据。</p>
+
+
+            </div>
+            
+        </div>
+        <!--
+            if config set comment enable,include comment
+        -->
+        
+    </div>
+    <div class="col-md-3 col-sidebar">
+        <!-- sidebar:category list -->
+<div class="panel panel-default categories">
+    <div class="panel-heading title">
+        分类列表
+    </div>
+    <div class="panel-body list">
+        <ul>
+          
+          <li>
+              <a class="catelink" href="/categories/JavaScript">
+                  JavaScript&nbsp;<span class="count">[4]</span>
+              </a>
+          </li>
+
+          
+          <li>
+              <a class="catelink" href="/categories/Node.js">
+                  Node.js&nbsp;<span class="count">[2]</span>
+              </a>
+          </li>
+
+          
+          <li>
+              <a class="catelink" href="/categories/Tools">
+                  Tools&nbsp;<span class="count">[1]</span>
+              </a>
+          </li>
+
+          
+          <li>
+              <a class="catelink" href="/categories/HTML">
+                  HTML&nbsp;<span class="count">[1]</span>
+              </a>
+          </li>
+
+          
+          <li>
+              <a class="catelink" href="/categories/vue">
+                  vue&nbsp;<span class="count">[1]</span>
+              </a>
+          </li>
+
+          
+        </ul>
+    </div>
+</div>
+
+        <!-- sidebar: tag list -->
+<div class="panel panel-default tags">
+    <div class="panel-heading title">
+        标签云
+    </div>
+    <div class="panel-body list">
+        
+            <a class="taglink" href="/tag/#JavaScript" data-target-cate="#JavaScript">
+                JavaScript
+            </a>
+        
+            <a class="taglink" href="/tag/#Node.js" data-target-cate="#Node.js">
+                Node.js
+            </a>
+        
+            <a class="taglink" href="/tag/#Sublime" data-target-cate="#Sublime">
+                Sublime
+            </a>
+        
+            <a class="taglink" href="/tag/#IE8" data-target-cate="#IE8">
+                IE8
+            </a>
+        
+            <a class="taglink" href="/tag/#React" data-target-cate="#React">
+                React
+            </a>
+        
+            <a class="taglink" href="/tag/#Antd" data-target-cate="#Antd">
+                Antd
+            </a>
+        
+            <a class="taglink" href="/tag/#Canvas" data-target-cate="#Canvas">
+                Canvas
+            </a>
+        
+            <a class="taglink" href="/tag/#HTML" data-target-cate="#HTML">
+                HTML
+            </a>
+        
+            <a class="taglink" href="/tag/#vue" data-target-cate="#vue">
+                vue
+            </a>
+        
+    </div>
+</div>
+
+    </div>
+</div>
+
+  </div>
+
+  <footer>
+  <div class="text-center">
+    © 2014-2015 All rights reserved.
+    Made with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a>
+    and <i class="fa fa-heart"></i> by <a href="https://github.com/guovz/jekyll-pithy" target="_blank">Pithy</a>
+  </div>
+  <div class="totop" data-toggle="totop">
+      <i class="fa fa-chevron-up"></i>
+  </div>
+</footer>
+
+
+  <!--the js include-->
+<script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/script/pithy.js"></script>
+
+<!--
+  the site comment script
+-->
+
+
+
+<!--
+  the site analysis script
+-->
+
+
+
+</body>
+</html>

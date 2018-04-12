@@ -1,0 +1,214 @@
+.body .nav {
+    float: left;
+    margin-top: 20px;
+    width: 200px;
+}
+.body .nav li {
+    margin-bottom: 10px;
+    height: 18px;
+    line-height: 18px;
+    color: #939393;
+    cursor: pointer;
+}
+.body .nav li.all {
+    color: #003382;
+}
+.body .content {
+    float: left;
+    width: 1000px;
+}
+.body .content .list>li {
+    min-height: 341px;
+    border-bottom: 1px solid #DFDFDF;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding-top: 20px;
+}
+.body .content .list>li::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+.body .content .list>li:first-child {
+    padding-top: 20px;
+}
+.body .content .list>li:last-child {
+    border-bottom: none;
+}
+.body .content .list>li .date {
+    float: left;
+    width: 95px;
+    height: 16px;
+    line-height: 16px;
+    font-size: 14px;
+    color: #939393
+}
+.body .content .list>li .detail {
+    float: left;
+    width: 305px;
+    height: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding-right: 25px;
+}
+.body .content .list>li .detail h3 {
+    font-size: 14px;
+    font-weight: normal;
+    color: #4A4A4A;
+    height: 32px;
+    line-height: 16px;
+}
+.body .content .list>li .detail h3:before {
+    content: attr( data-eng )
+}
+.body .content .list>li .detail h3:hover:before {
+    content: attr( data-chn )
+}
+.body .content .list>li .detail p {
+    margin-top: 20px;
+    line-height: 18px;
+    font-size: 12px;
+    color: #939393;
+    display: -webkit-box !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;/* 这里决定显示多少行 */
+}
+.body .content .list>li .detail .more {
+    margin-top: 20px;
+    height: 16px;
+    line-height: 16px;
+    color: #4A4A4A;
+    font-size: 12px;
+    cursor: pointer;
+}
+.body .content .list>li .detail .more:after {
+    position: absolute;
+    background: url("../images/more.png") no-repeat;
+    width: 12px;
+    height: 12px;
+    margin-top: 2px;
+    margin-left: 10px;
+    content: '';
+}
+.body .content .list>li .img {
+    float: left;
+    width: 600px;
+    min-height: 300px;
+    position: relative;
+}
+.body .content .list>li .img>img {
+    display: block;
+    height: 100%;
+    height: 100%;
+}
+.body .content .list>li .more-img {
+    /* position: absolute; */
+    display: none;
+}
+.body .content .list>li .more-img li {
+    width: 600px;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.body .content .list>li .more-img li.loading::before {
+    position: absolute;
+    background: url("../images/loading.gif") no-repeat;
+    width: 84px;
+    height: 58px;
+    content: '';
+}
+.body .content .list>li .more-img li.loading img {
+    display: none;
+}
+.body .content .list>li .more-img li img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.body .content .page {
+    height: 30px;
+    line-height: 30px;
+    float: right;
+}
+.body .content .page .left {
+    float: left;
+    margin-right: 6px;
+}
+.body .content .page .left:before {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-left: 1px solid #D9D9D9;
+    border-bottom: 1px solid #D9D9D9;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    left: 12px;
+    top: 11px;
+    content: '';
+}
+.body .content .page .right {
+    float: right;
+}
+.body .content .page .right:before {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-right: 1px solid #D9D9D9;
+    border-top: 1px solid #D9D9D9;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    left: 9px;
+    top: 11px;
+    content: '';
+}
+.body .content .page i {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 1px solid #D9D9D9;
+    cursor: pointer;
+}
+.body .content .page .num {
+    float: right;
+}
+.body .content .page .num li {
+    float: left;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 1px solid #D9D9D9;
+    text-align: center;
+    margin-right: 6px;
+    cursor: pointer;
+    font-size: 12px;
+}
+.body .page .num li::before {
+    height: 28px;
+    line-height: 28px;
+    width: 18px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    content: attr(data-num);
+}
+.body .content .page .num li.active {
+    background: #003382;
+    color: #FFFFFF;
+}

@@ -1,0 +1,77 @@
+.body .left {
+    float: left;
+    width: 200px;
+    margin-top: 20px;
+}
+.body .left ul {
+    position: relative;
+}
+.body .left ul::after {
+    position: absolute;
+    top: 0;
+    left: 29.5px;
+    bottom: 0;
+    width: 1px;
+    background: #9B9B9B;
+    z-index: -1;
+    content: '';
+}
+.body .left li {
+    width: 60px;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 4px;
+    color: #9B9B9B;
+    background: #FFFFFF;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 22px;
+    cursor: pointer;
+}
+.body .left li:hover {
+    color: #FFFFFF;
+    background: #7F99C0;
+}
+.body .left li.active {
+    color: #FFFFFF;
+    background: #003382;
+}
+.body .right {
+    float: left;
+    width: 1000px;
+    margin-top: 20px;
+}
+.body .right ul.top {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #EBEBEB;
+}
+.body .right ul.bottom {
+    margin-top: 40px;
+}
+.body .right ul.top::after {
+    clear: both;
+    display: block;
+    content: '';
+}
+.body .right li {
+    float: left;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin-right: 50px;
+    margin-bottom: 40px;
+    background: #EBEBEB;
+    cursor: pointer;
+}
+.body .right li:nth-child(7n) {
+    margin-right: 0;
+}
+.body .right li.active {
+    background: #003382;
+}
+.body .right li.active img {
+    display: block;
+    width: 76px;
+    height: 30px;
+    margin: 35px auto;
+}

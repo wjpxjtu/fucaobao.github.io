@@ -1,0 +1,132 @@
+/*common --- BEGIN*/
+html,body {
+    font-size: 14px;
+    font-family: "Microsoft Yahei";
+    width: 100%;
+    height: 100%;
+}
+*{
+    padding:0;
+    margin:0;
+}
+.l {
+    float: left;
+}
+.r {
+    float: right;
+}
+.dn {
+    display: none;
+}
+.db {
+    display: block;
+}
+.dib {
+    display: inline-block;
+}
+.cb {
+    clear: both;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+::-webkit-scrollbar {
+    width: 3px;
+    height: 100px;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar-corner {
+    background-color: #f1f1f1;
+    border-radius: 1px;
+    -webkit-border-radius: 1px;
+}
+/*
+  这就是滚动条的样式了
+*/
+::-webkit-scrollbar-thumb {
+    height: 100px;
+    background-color: #7b7b7b;
+    /*border: 1px solid rgba(0,0,0,0.21);*/
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+/*
+  悬浮时
+*/
+::-webkit-scrollbar-thumb:hover {
+    background-color: #F6F6F6;
+    /*border: 1px solid rgba(0,0,0,0.21);*/
+}
+/*
+  滚动条空白处的样式
+*/
+::-webkit-scrollbar-track-piece {
+    background-color: #fff;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+/*common --- END*/
+/*header --- BEGIN*/
+.header {
+    width: 100%;
+    height: 150px;
+    border-bottom: 1px solid #DFDFDF;
+}
+.header .top {
+    width: 1200px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header .top>i.logo {
+    position: absolute;
+    background: url("../images/logo.png") no-repeat;
+    width: 128px;
+    height: 87px;
+    top: 32px;
+    cursor: pointer;
+}
+.header .top .nav {
+    float: right;
+    margin-top: 78px;
+}
+.header .top .nav li {
+    float: left;
+    color: #9B9B9B;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 28px;
+    margin-right: 28px;
+}
+.header .top .nav li:last-child {
+    text-align: right;
+    margin-right: 0;
+}
+.header .top .nav li.active {
+    color: #003382;
+}
+.header .top .nav li:before {
+    content: attr( data-eng );
+}
+.header .top .nav li:hover:before {
+    content: attr( data-chn );
+    text-align: center;
+}
+/*header --- END*/
+/*body --- BEGIN*/
+.body {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+}
+.body:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+/*body --- END*/
